@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <label>Fill in the Blanks:</label>
+      <br>
+        <input type="text" ng-model="noun" placeholder="Noun">
+      <br>
+        <input type="text" ng-model="adjective" placeholder="Adjective">
+      
+      <h1>My favorite kind of coffee is
+        <span ng-if="noun">{{noun}}</span>
+        <span ng-if="!noun">______.</span> <br>
+       
+          I like it served
+        <span ng-if="noun">{{adjective}}</span>
+        <span ng-if="!noun">______.</span>
+      </h1>
+      <hr>
+
+      <label>How long ago did you graduate?</label>
+        <input type="number" ng-model="currentYear" placeholder="Current Year">
+        <input type="number" ng-model="gradYear" placeholder="Graduation Year">
+      <h1>
+        Amount of years since graduation {{currentYear - gradYear}}
+      </h1>
+
+      <hr> 
+      <label>Complete the sentence</label>
+        <input type="text" ng-model="nameOfSchool" placeholder="School">
+        <input type="text" ng-model="nameOfDegree" placeholder="Degree">
+      
+      <h1>
+        What is the name of your school? {{ nameOfSchool | uppercase }} <br>
+        And what degree did you earn? {{ nameOfDegree | lowercase }}
+      </h1>
+      <hr>
+
+      <label>Is this information correct?</label>
+      <input type="text" ng-model="Yes" placeholder="Yes or No">
+
+      <h1>
+        <span ng-if="Yes">{{ true || false}}</span>
+        <span ng-if="!Yes">______</span>
+      </h1>
+
+
+    </div>
+  </body>
+</html>
